@@ -121,7 +121,8 @@ staging_events_copy = ("""
     JSON {};
 """).format(config['S3']['LOG_DATA'], config['IAM_ROLE']['ARN'], config['S3']['LOG_JSONPATH'])
 # The COPY function only parses the first-level JSON data structures to columns in target table by matching each name. 
-# For this operation to be successful, we are required to specify a JSON path to tell the target table to follow the same order as found in the JSON path. Otherwise, COPY loads the fields automatically and assumes source and target are already in the same order. 
+# For this operation to be successful, we are required to specify a JSON path to tell the target table to follow the same order as found in the JSON path.
+# Otherwise, COPY loads the fields automatically and assumes source and target are already in the same order. 
 
 staging_songs_copy = ("""
     COPY staging_songs FROM {}
@@ -130,7 +131,8 @@ staging_songs_copy = ("""
     JSON 'auto';
 """).format(config['S3']['SONG_DATA'], config['IAM_ROLE']['ARN'])
 # The COPY function only parses the first-level JSON data structures to columns in target table by matching each name. 
-# For this operation to be successful, we are required to specify a JSON path to tell the target table to follow the same order as found in the JSON path. Otherwise, COPY loads the fields automatically and assumes source and target are already in the same order. 
+# For this operation to be successful, we are required to specify a JSON path to tell the target table to follow the same order as found in the JSON path.
+# Otherwise, COPY loads the fields automatically and assumes source and target are already in the same order. 
 
 # FINAL TABLES
 
