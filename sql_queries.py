@@ -32,9 +32,9 @@ CREATE TABLE IF NOT EXISTS staging_events (
     method VARCHAR,
     page VARCHAR,
     registration VARCHAR, 
-    sessionId BIGINT,
+    sessionId VARCHAR,
     song VARCHAR, 
-    status INTEGER,
+    status VARCHAR,
     ts VARCHAR,
     userAgent TEXT,       
     userId VARCHAR
