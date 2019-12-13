@@ -44,12 +44,12 @@ CREATE TABLE IF NOT EXISTS staging_events (
 staging_songs_table_create = ("""
 CREATE TABLE IF NOT EXISTS staging_songs (
     num_songs INTEGER,
-    artist_id VARCHAR NOT NULL,    
+    artist_id VARCHAR,    
     artist_latitude DOUBLE PRECISION,
     artist_longitude DOUBLE PRECISION,
     artist_location VARCHAR,
     artist_name VARCHAR, 
-    song_id VARCHAR NOT NULL PRIMARY KEY,
+    song_id VARCHAR,
     title VARCHAR,
     duration DOUBLE PRECISION,
     year INTEGER
