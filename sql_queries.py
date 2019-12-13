@@ -121,8 +121,8 @@ staging_events_copy = ("""
     JSON {};
 """).format(config['S3']['LOG_DATA'], config['IAM_ROLE']['ARN'], config['S3']['LOG_JSONPATH'])
 # The COPY function only parses the first-level JSON data structures to columns in target table by matching each name. 
-# For this operation to be successful, we are required to specify a JSON path to tell the target table to follow the same order as found in the JSON path.
-# Otherwise, COPY loads the fields automatically and assumes source and target are already in the same order. 
+# For this operation to be successful, we are required to specify a JSON path to tell the target table to follow the same order
+# as found in the JSON path. Otherwise, COPY loads the fields automatically and assumes source and target are already in the same order. 
 
 staging_songs_copy = ("""
     COPY staging_songs FROM {}
@@ -131,8 +131,8 @@ staging_songs_copy = ("""
     JSON 'auto';
 """).format(config['S3']['SONG_DATA'], config['IAM_ROLE']['ARN'])
 # The COPY function only parses the first-level JSON data structures to columns in target table by matching each name. 
-# For this operation to be successful, we are required to specify a JSON path to tell the target table to follow the same order as found in the JSON path.
-# Otherwise, COPY loads the fields automatically and assumes source and target are already in the same order. 
+# For this operation to be successful, we are required to specify a JSON path to tell the target table to follow the same order
+# as found in the JSON path. Otherwise, COPY loads the fields automatically and assumes source and target are already in the same order. 
 
 # FINAL TABLES
 
@@ -203,7 +203,9 @@ FROM (SELECT DISTINCT TIMESTAMP 'epoch' + start_time/1000 * INTERVAL '1 second' 
 
 # QUERY LISTS
 
-create_table_queries = [staging_events_table_create, staging_songs_table_create, songplay_table_create, user_table_create, song_table_create, artist_table_create, time_table_create]
-drop_table_queries = [staging_events_table_drop, staging_songs_table_drop, songplay_table_drop, user_table_drop, song_table_drop, artist_table_drop, time_table_drop]
+create_table_queries = [staging_events_table_create, staging_songs_table_create, songplay_table_create, user_table_create,
+                        song_table_create, artist_table_create, time_table_create]
+drop_table_queries = [staging_events_table_drop, staging_songs_table_drop, songplay_table_drop, user_table_drop, song_table_drop,
+                      artist_table_drop, time_table_drop]
 copy_table_queries = [staging_events_copy, staging_songs_copy]
 insert_table_queries = [songplay_table_insert, user_table_insert, song_table_insert, artist_table_insert, time_table_insert]
